@@ -15,11 +15,13 @@ cats = defaultdict(int)   # Category dictionary for votes
 running_poll = False      # Only 1 poll at a time
 
 
+# Writing to terminal on start-up
 @client.event
 async def on_ready():
     print("We have logged in as {0.user}".format(client))
 
 
+# Listening for messages on discord
 @client.event
 async def on_message(message):
     global running_poll
@@ -32,6 +34,7 @@ async def on_message(message):
 
     if message.content.startswith('!help pretty please'):
         await message.channel.send(f"To start a poll use: !poll [name of poll] [vote 1] [vote 2] .. [vote n].\n \
+                                     You then write the thing you want to vote on. \
                                      When you are done type: !endpoll")
 
     if message.content == ('!endpoll'):

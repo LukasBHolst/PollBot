@@ -40,21 +40,21 @@ async def on_message(message):
     if message.content == ('!endpoll'):
         running_poll = False
         await message.channel.send(f"The votes are in!")
-        sorted([(val, key) for (key, val) in cats.items()], reverse=True))
+        sorted([(val, key) for (key, val) in cats.items()], reverse=True)
         for i, (k, v) in enumerate(cats):
             await message.channel.send(f"{i+1}. {k} with {v} " + ("vote" if v == 1 else "votes"))
 
     if message.content.startswith('!poll '):
         if running_poll == False:
-            poll=message.content.split(' ')
+            poll = message.content.split(' ')
             if len(poll) < 3:
                 await message.channel.send("Invalid poll, try again")
                 return
-            poll_name=poll[1]
+            poll_name = poll[1]
             for vote in poll[2:]:
-                cats[vote]=0
+                cats[vote] = 0
             await message.channel.send(f"Starting poll: {poll_name}")
-            running_poll=True
+            running_poll = True
         else:
             await message.channel.send(f"A poll is already running. Use !endpoll to end it")
 

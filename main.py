@@ -56,7 +56,7 @@ async def on_message(message):
             await message.channel.send(f"Starting poll: {poll_name}")
             running_poll=True
         else:
-            await message.channel.send(f"A poll is already running. Wait for it to finish or use !endpoll")
+            await message.channel.send(f"A poll is already running. Use !endpoll to end it")
 
     if message.content in cats:
         cats[message.content] += 1

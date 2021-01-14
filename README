@@ -2,6 +2,7 @@ Commands for the bot:
 !help - Tells you to use command: !help pretty please
 !help pretty please - Tells you the other commands available
 !poll - Starts the poll. Needs to be written in format without []: !poll [name_of_poll] [vote_1] [vote_2] .. [vote_n]
+                                                                   !poll "name of poll" [vote_1] [vote_2] .. [vote_n]
 !endpoll - Ends the poll and gives the results
 
 Voting:
